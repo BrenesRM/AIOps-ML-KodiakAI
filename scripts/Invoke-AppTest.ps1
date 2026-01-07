@@ -1,5 +1,6 @@
 $ErrorActionPreference = "Stop"
-$ProjectRoot = "C:\VSCODE\AIOps-ML-Antigravity"
+$ScriptDir = Split-Path $MyInvocation.MyCommand.Path
+$ProjectRoot = (Resolve-Path "$ScriptDir\..").Path
 
 Write-Host "--- AIOps App & ML Test Suite ---" -ForegroundColor Cyan
 

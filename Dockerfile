@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Install Python dependencies
 COPY api/requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY packages packages
+RUN pip install --no-index --find-links=packages --no-cache-dir -r requirements.txt
 
 # Copy application code and model artifacts
 COPY api/ /app/api/
